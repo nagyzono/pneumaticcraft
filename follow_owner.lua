@@ -13,6 +13,6 @@ function goto(x,y,z)
 end
 
 drone = peripheral.wrap("left")
-owner_pos = drone.getVariable($owner_pos)
+owner_pos = drone.getVariable("$owner_pos")
 
 goto(owner_pos.x,owner_pos.y + 2,owner_pos.z)
