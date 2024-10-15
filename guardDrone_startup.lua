@@ -95,11 +95,13 @@ function guard(guard_pos)
 		guard_pos.z + 25,
 		"filled"
 	)
+	drone.showArea()
 	--drone.setUseMaxActions(true)
 	--drone.setMaxActions(20)
 	drone.setAction("entity_attack")
 	actionWait()
 	drone.clearArea()
+	drone.clearWhitelistText()
 end
 
 
