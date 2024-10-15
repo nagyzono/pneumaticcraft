@@ -85,7 +85,6 @@ end
 
 function guard(guard_pos)
 	standby()
-	renameDrone("Guard Drone")
 	drone.addWhitelistText("@mob")
 	drone.addArea(
 		guard_pos.x - 25,
@@ -113,9 +112,13 @@ function droneGuard()
 	guard_pos = setGuardPos(0)
 	while true
 	do
+		renameDrone("refuel part")
 		forceRefuel(2237, 79, -1071)
+		renameDrone("restock part")
 		getAmmo(2261, 76, -1070)
+		renameDrone("reposition part")
 		goto(guard_pos.x,guard_pos.y,guard_pos.z)
+		renameDrone("guard part")
 		guard(guard_pos)
 	end
 end
