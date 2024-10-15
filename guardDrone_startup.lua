@@ -77,6 +77,7 @@ function goto(x,y,z)
 	drone.setAction("goto")
 	actionWait()
 	drone.clearArea()
+	drone.abortAction()
 end
 
 function setGuardPos(modifier)
