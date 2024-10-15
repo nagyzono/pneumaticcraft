@@ -119,6 +119,7 @@ function droneGuard()
 	standby()
 	start_pos = getPos()
 	guard_pos = setGuardPos(0)
+	goto(guard_pos.x, guard_pos.y + 2, guard_pos.z)
 	sleep(2)
 	while true
 	do
