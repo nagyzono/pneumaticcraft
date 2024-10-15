@@ -96,8 +96,8 @@ function guard(guard_pos)
 		guard_pos.z + 25,
 		"filled"
 	)
-	drone.setUseMaxActions(true)
-	drone.setMaxActions(20)
+	--drone.setUseMaxActions(true)
+	--drone.setMaxActions(20)
 	drone.setAction("entity_attack")
 	actionWait()
 	drone.clearArea()
