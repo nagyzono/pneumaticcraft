@@ -104,11 +104,10 @@ function guard(guard_pos)
 end
 
 function resetDrone()
-    drone.setAction("standby")  -- Biztosítsd, hogy minden folyamat leálljon
-    sleep(2)  -- Adj időt a drónnak
-    drone.clearArea()  -- Töröld a beállított területeket
-    drone.clearWhitelistText()  -- Töröld a whitelistet, ha van
-    print("Drone reset initiated")
+    drone.setAction("standby")
+    sleep(2)
+    drone.clearArea()
+    drone.clearWhitelistText()
 end
 
 
