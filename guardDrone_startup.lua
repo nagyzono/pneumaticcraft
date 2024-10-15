@@ -114,8 +114,8 @@ end
 
 
 function droneGuard()
-	resetDrone()
 	drone = peripheral.wrap("left")
+	resetDrone()
 	renameDrone("Guard routine starting...")
 	standby()
 	start_pos = getPos()
