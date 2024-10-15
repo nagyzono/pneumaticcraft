@@ -120,9 +120,7 @@ function droneGuard()
 	standby()
 	start_pos = getPos()
 	guard_pos = setGuardPos(0)
-	sleep(1)
-	renameDrone("guard_pos: "..guard_pos.x.." "..guard_pos.y.." "..guard_pos.z)
-	sleep(3)
+	sleep(2)
 	while true
 	do
 		resetDrone()
