@@ -63,7 +63,6 @@ function forceRefuel(x,y,z)
 	if checkPressure(3, "<=") then
 		renameDrone("out of pressure")
 		goto(x,y,z)
-		actionWait()
 		standby()
 		while not checkPressure(10, "=")
 		do
