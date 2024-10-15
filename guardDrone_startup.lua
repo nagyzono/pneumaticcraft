@@ -126,7 +126,7 @@ function droneGuard()
 		resetDrone()
 		forceRefuel(2237, 79, -1071)
 		getAmmo(2261, 76, -1070)
-		goto(guard_pos.x,guard_pos.y,guard_pos.z)
+		goto(guard_pos.x, guard_pos.y, guard_pos.z)
 		renameDrone("Guard")
 		guard(guard_pos)
 	end
