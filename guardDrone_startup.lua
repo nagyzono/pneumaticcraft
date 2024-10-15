@@ -95,6 +95,7 @@ function guard(guard_pos)
 		guard_pos.z + 25,
 		"filled"
 	)
+	drone.hideArea()
 	--drone.showArea()
 	--drone.setUseMaxActions(true)
 	--drone.setMaxActions(20)
