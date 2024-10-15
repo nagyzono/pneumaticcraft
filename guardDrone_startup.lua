@@ -87,9 +87,7 @@ end
 function guard(guard_pos)
     standby()
     drone.abortAction()
-    renameDrone("Guard: Whitelist")
     drone.addWhitelistText("@mob")
-    renameDrone("Guard: Adding area")
     drone.addArea(
         guard_pos.x - 25,
         guard_pos.y - 7,
@@ -99,16 +97,24 @@ function guard(guard_pos)
         guard_pos.z + 25,
         "filled"
     )
-    renameDrone("Guard: Attack")
     drone.setAction("entity_attack")
     actionWait()
-    renameDrone("Guard: Clearing area")
     drone.clearArea()
     drone.clearWhitelistText()
 end
 
+function resetDrone()
+    drone.setAction("standby")  -- Biztosítsd, hogy minden folyamat leálljon
+    sleep(2)  -- Adj időt a drónnak
+    drone.clearArea()  -- Töröld a beállított területeket
+    drone.clearWhitelistText()  -- Töröld a whitelistet, ha van
+    print("Drone reset initiated")
+end
+
+
 
 function droneGuard()
+	resetDrone()
 	drone = peripheral.wrap("left")
 	renameDrone("Guard routine starting...")
 	standby()
@@ -119,11 +125,9 @@ function droneGuard()
 	sleep(3)
 	while true
 	do
-		renameDrone("Refuel")
+		resetDrone()
 		forceRefuel(2237, 79, -1071)
-		renameDrone("Restock")
 		getAmmo(2261, 76, -1070)
-		renameDrone("Reposition")
 		goto(guard_pos.x,guard_pos.y,guard_pos.z)
 		renameDrone("Guard")
 		guard(guard_pos)
