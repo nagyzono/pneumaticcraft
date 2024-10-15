@@ -85,6 +85,7 @@ end
 
 function guard(guard_pos)
     standby()
+    drone.abortAction()
     print("Guard: Setting up whitelist ")
     drone.addWhitelistText("@mob")
     print("Guard: Adding area for attack")
