@@ -87,9 +87,9 @@ end
 function guard(guard_pos)
     standby()
     drone.abortAction()
-    print("Guard: Setting up whitelist")
+    renameDrone("Guard: Whitelist")
     drone.addWhitelistText("@mob")
-    print("Guard: Adding area for attack")
+    renameDrone("Guard: Adding area")
     drone.addArea(
         guard_pos.x - 25,
         guard_pos.y - 7,
@@ -99,10 +99,10 @@ function guard(guard_pos)
         guard_pos.z + 25,
         "filled"
     )
-    print("Guard: Setting entity attack action")
+    renameDrone("Guard: Attack")
     drone.setAction("entity_attack")
     actionWait()
-    print("Guard: Attack finished, clearing area")
+    renameDrone("Guard: Clearing area")
     drone.clearArea()
     drone.clearWhitelistText()
 end
@@ -119,13 +119,13 @@ function droneGuard()
 	sleep(3)
 	while true
 	do
-		renameDrone("refuel part")
+		renameDrone("Refuel")
 		forceRefuel(2237, 79, -1071)
-		renameDrone("restock part")
+		renameDrone("Restock")
 		getAmmo(2261, 76, -1070)
-		renameDrone("reposition part")
+		renameDrone("Reposition")
 		goto(guard_pos.x,guard_pos.y,guard_pos.z)
-		renameDrone("guard part")
+		renameDrone("Guard")
 		guard(guard_pos)
 	end
 end
