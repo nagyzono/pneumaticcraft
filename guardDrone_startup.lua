@@ -84,25 +84,25 @@ function setGuardPos(modifier)
 end
 
 function guard(guard_pos)
-	standby()
-	drone.addWhitelistText("@mob")
-	drone.addArea(
-		guard_pos.x - 25,
-		guard_pos.y - 7,
-		guard_pos.z - 25,
-		guard_pos.x + 25,
-		guard_pos.y + 7,
-		guard_pos.z + 25,
-		"filled"
-	)
-	drone.hideArea()
-	--drone.showArea()
-	--drone.setUseMaxActions(true)
-	--drone.setMaxActions(20)
-	drone.setAction("entity_attack")
-	actionWait()
-	drone.clearArea()
-	drone.clearWhitelistText()
+    standby()
+    print("Guard: Setting up whitelist")
+    drone.addWhitelistText("@mob")
+    print("Guard: Adding area for attack")
+    drone.addArea(
+        guard_pos.x - 25,
+        guard_pos.y - 7,
+        guard_pos.z - 25,
+        guard_pos.x + 25,
+        guard_pos.y + 7,
+        guard_pos.z + 25,
+        "filled"
+    )
+    print("Guard: Setting entity attack action")
+    drone.setAction("entity_attack")
+    actionWait()
+    print("Guard: Attack finished, clearing area")
+    drone.clearArea()
+    drone.clearWhitelistText()
 end
 
 
